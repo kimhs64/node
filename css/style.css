@@ -576,6 +576,8 @@ body.menu-open{overflow:hidden;}
 .contact__map-section{margin-top:clamp(56px, 5.63vw, 108px);}
 .office{margin-top:clamp(24px, 2.24vw, 43px);}
 .office + .office{margin-top:clamp(56px, 6.04vw, 116px);}
+/* <img> placeholder or Google Maps <iframe> (keyless embed: maps.google.com/maps?q=주소&output=embed) */
+iframe.office__map{display:block;border:0;}
 .office__map{
   width:100%;
   aspect-ratio:1680 / 450;
