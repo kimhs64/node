@@ -319,11 +319,11 @@ body.menu-open{overflow:hidden;}
   background:#e6e6e6;
 }
 
-/* Footer — 430px tall */
+/* Footer — Figma "Frame 24" (159:473), 1920 × 352 */
 .footer{
   background:var(--footer);
   color:var(--footer-text);
-  padding:85px 0 110px;
+  padding:81px 0 74px;
 }
 .footer__inner{
   display:flex;
@@ -332,13 +332,13 @@ body.menu-open{overflow:hidden;}
   gap:40px;
   flex-wrap:wrap;
 }
-.footer__logo{height:45px;width:auto;margin-bottom:40px;}
+.footer__logo{height:45px;width:auto;margin-bottom:49px;}
 .footer__info{
   display:flex;
   flex-direction:column;
   font-size:18px;
   line-height:30px;
-  margin-bottom:36px;
+  margin-bottom:19px;
 }
 .footer__info div{display:flex;}
 .footer__info dt{color:#e2e2e2;font-weight:500;min-width:157px;}
@@ -357,7 +357,8 @@ body.menu-open{overflow:hidden;}
   line-height:24px;
   font-weight:600;
   color:#fff;
-  margin-bottom:44px;
+  margin-top:-6px;   /* links sit slightly above the logo's top edge in Figma */
+  margin-bottom:77px;
 }
 .footer__cs-title{font-size:24px;line-height:30px;font-weight:600;color:#fff;margin-bottom:10px;}
 .footer__cs-num,
