@@ -332,7 +332,9 @@ body.menu-open{overflow:hidden;}
   gap:40px;
   flex-wrap:wrap;
 }
-.footer__logo{height:45px;width:auto;margin-bottom:49px;}
+/* White logo on the dark footer: invert the black logo.png
+   (white oval, black ring and lettering, like the Figma footer) */
+.footer__logo{height:45px;width:auto;margin-bottom:49px;filter:invert(1);}
 .footer__info{
   display:flex;
   flex-direction:column;
