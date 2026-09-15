@@ -2,12 +2,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('nav');
   const burger = document.getElementById('burger');
 
-  burger?.addEventListener('click', () => {
-    nav.classList.toggle('open');
-  });
+  // Mobile menu: full-screen sheet; lock page scroll while it is open.
+  const setMenu = (open) => {
+    nav.classList.toggle('open', open);
+    document.body.classList.toggle('menu-open', open);
+    burger?.setAttribute('aria-expanded', String(open));
+    burger?.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  };
+
+  burger?.addEventListener('click', () => setMenu(!nav.classList.contains('open')));
 
   document.querySelectorAll('.nav__mobile a').forEach((link) => {
-    link.addEventListener('click', () => nav.classList.remove('open'));
+    link.addEventListener('click', () => setMenu(false));
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) setMenu(false);
+  });
+
+  // Burger is hidden above 1100px; don't leave the sheet open after a resize.
+  window.matchMedia('(min-width: 1101px)').addEventListener('change', (e) => {
+    if (e.matches) setMenu(false);
   });
 
   // Nav background: transparent while the hero (main section) is in view,

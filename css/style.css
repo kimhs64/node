@@ -131,27 +131,68 @@ h1,h2,h3,p,dl,dd{margin:0;}
   transition:background-color .15s ease, color .15s ease;
 }
 .nav__cta:hover{background:#fff;color:var(--ink);}
+/* Mobile menu — Figma "mobile" (122:171) / "mobile_menu" (122:261), 393 × 852 */
 .nav__burger{
   display:none;
   flex-direction:column;
-  gap:5px;
+  align-items:flex-end;
+  gap:9px;
   background:none;
   border:none;
   cursor:pointer;
   padding:8px;
+  margin-right:-8px;
   grid-column:3;
   justify-self:end;
 }
-.nav__burger span{width:24px;height:2px;background:var(--ink);}
+.nav__burger span{width:33px;height:2px;background:var(--ink);transition:width .2s ease;}
+/* Open state: lines step down 33 / 27 / 21px, right-aligned */
+.nav.open .nav__burger span:nth-child(2){width:27px;}
+.nav.open .nav__burger span:nth-child(3){width:21px;}
 .nav__mobile{
   display:none;
+  flex:1;
   flex-direction:column;
-  padding:12px var(--gutter) 20px;
-  border-top:1px solid #e7e7e7;
+  align-items:center;
+  padding:51px 16px 92px;
   background:#fff;
+  overflow-y:auto;
 }
-.nav__mobile a{padding:10px 0;font-family:var(--font-condensed);font-weight:300;font-size:22px;}
+.nav__mobile a{
+  font-family:var(--font-condensed);
+  font-weight:300;
+  font-size:40px;
+  line-height:48px;
+}
+.nav__mobile a + a{margin-top:37px;}   /* 85px between item centres */
+.nav__mobile a:hover,
+.nav__mobile a.is-active{font-weight:900;text-decoration:underline;text-underline-offset:6px;}
+.nav__mobile .nav__mobile-cta{
+  margin-top:auto;
+  display:inline-flex;
+  align-items:center;
+  height:52px;
+  padding:0 23px;
+  background:var(--ink);
+  color:#fff;
+  border:1px solid var(--ink);
+  font-family:var(--font-inserat);
+  font-weight:900;
+  font-size:30px;
+  line-height:1;
+}
+.nav__mobile .nav__mobile-cta:hover{background:#fff;color:var(--ink);text-decoration:none;}
+/* Full-screen white sheet while the menu is open */
+.nav.open{
+  bottom:0;
+  display:flex;
+  flex-direction:column;
+  background:#fff;
+  backdrop-filter:none;
+  border-bottom-color:transparent;
+}
 .nav.open .nav__mobile{display:flex;}
+body.menu-open{overflow:hidden;}
 
 /* Hero — 1920 × 980 photo, copy vertically centred at left gutter */
 .hero{
@@ -557,8 +598,8 @@ h1,h2,h3,p,dl,dd{margin:0;}
 @media (max-width:1100px){
   .nav__links,.nav__cta{display:none;}
   .nav__burger{display:flex;}
-  .nav__inner{height:72px;}
-  .nav__logo-img{height:40px;}
+  .nav__inner{height:62px;padding-left:16px;padding-right:16px;}
+  .nav__logo-img{height:35px;}
   /* Hero is a fixed 560px tall here, so the hand-placed crop can't cover it */
   .hero__bg{inset:0;left:0;width:100%;height:100%;margin-top:0;object-fit:cover;object-position:78% 62%;}
 }
