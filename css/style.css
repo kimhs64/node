@@ -622,6 +622,10 @@ body.menu-open{overflow:hidden;}
   /* Mobile hero: taller, copy near the top, photo zoomed onto the spray bottle */
   .hero{height:180vw;align-items:flex-start;}
   .hero__content{padding-top:36vw;}
+  /* "by Performance," must stay on one line: keep it unbroken and shrink the
+     title on narrow phones (that phrase is ~5.74em wide; 5.95 leaves slack) */
+  .hero__content h1{font-size:min(42px, calc((100vw - 2 * var(--gutter)) / 5.95));}
+  .hero__content h1 .nowrap{white-space:nowrap;}
   .hero__bg{inset:auto;top:0;left:-129%;width:304%;height:auto;margin-top:-57%;object-fit:fill;}
   .btn--lg{font-size:16px;padding:10px 20px;}
   .footer__info div{flex-direction:column;margin-bottom:8px;}
