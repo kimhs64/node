@@ -613,9 +613,23 @@ body.menu-open{overflow:hidden;}
   .btn--lg{font-size:16px;padding:14px 21px;}
   .btn--md{font-size:20px;padding:12px 24px;}
   .btn--sm{font-size:16px;padding:10px 20px;}
-  .footer{padding:56px 0 64px;}
-  .footer__inner{flex-direction:column;align-items:flex-start;}
-  .footer__col--right{align-items:flex-start;text-align:left;}
+  /* Mobile footer — Figma "Frame 39": one column in the order
+     logo → SNS links → 고객센터 → 문의/회사 정보 → copyright.
+     The two desktop columns dissolve (display:contents) so `order` can interleave them. */
+  .footer{padding:60px 0 54px;}
+  .footer__inner{flex-direction:column;align-items:flex-start;flex-wrap:nowrap;gap:0;padding-left:30px;padding-right:30px;}
+  .footer__col,
+  .footer__col--right{display:contents;}
+  .footer__logo{order:1;margin-bottom:28px;}
+  .footer__links{order:2;margin:0 0 61px;}
+  .footer__cs{order:3;text-align:left;margin-bottom:57px;}
+  .footer__cs-title{margin-bottom:5px;}
+  .footer__cs-time{margin-bottom:0;}
+  .footer__info{order:4;margin-bottom:25px;line-height:22px;}
+  .footer__info div{flex-direction:column;}
+  .footer__info div + div{margin-top:12px;}
+  .footer__info dt{min-width:0;color:#fff;font-weight:600;}
+  .footer__copy{order:5;}
   .product-grid{grid-template-columns:repeat(2, minmax(0,1fr));column-gap:12px;}
   .contact__cols{grid-template-columns:1fr;}
   .office__map{aspect-ratio:16 / 9;}
@@ -631,6 +645,4 @@ body.menu-open{overflow:hidden;}
   .hero__content h1 .nowrap{white-space:nowrap;}
   .hero__bg{inset:auto;top:0;left:-129%;width:304%;height:auto;margin-top:-57%;object-fit:fill;}
   .btn--lg{font-size:16px;padding:10px 20px;}
-  .footer__info div{flex-direction:column;margin-bottom:8px;}
-  .footer__info dt{min-width:0;}
 }
