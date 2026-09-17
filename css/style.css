@@ -597,6 +597,208 @@ iframe.office__map{display:block;border:0;}
 .office__label{margin-right:clamp(12px, 1.67vw, 32px);}
 .office__tel-label{margin-left:clamp(20px, 2.92vw, 56px);margin-right:clamp(8px, .83vw, 16px);}
 
+/* ───────── Brand page — Figma node 163:289 (1920 × 8542) ─────────
+   Every desktop size is written as N * --u, where --u is 1px at 1920px wide
+   and shrinks proportionally below that, so the composition keeps its
+   proportions on smaller desktops. Display titles use Anton (Google Fonts),
+   the closest free match to the condensed face in the Figma file. */
+.brand-page{--u:calc(min(100vw, 1920px) / 1920);}
+.bp-wrap{padding-left:calc(120 * var(--u));padding-right:calc(120 * var(--u));}
+.bp-label{
+  font-family:var(--font-condensed);
+  font-weight:900;
+  font-size:max(12px, calc(18 * var(--u)));
+  line-height:calc(28 * var(--u));
+  letter-spacing:.01em;
+}
+.bp-label-sub{
+  font-size:max(12px, calc(18 * var(--u)));
+  line-height:calc(28 * var(--u));
+  margin-right:calc(59 * var(--u));
+}
+.bp-title{
+  font-family:"Anton","nimbus-sans-condensed","Helvetica Inserat",Impact,sans-serif;
+  font-weight:400;
+  letter-spacing:-.02em;
+  color:var(--ink);
+  white-space:nowrap;   /* lines are broken with <br>; absolute columns must not re-wrap them */
+}
+.bp-title--xl{font-size:calc(256 * var(--u));line-height:1.02;}
+.bp-title--lg{font-size:calc(225 * var(--u));line-height:1.04;}
+.bp-title--lg2{font-size:calc(177 * var(--u));line-height:1.045;}
+.bp-title--md{font-size:calc(137 * var(--u));line-height:1.04;}
+.bp-text{
+  font-size:max(14px, calc(24 * var(--u)));
+  line-height:calc(40 * var(--u));
+  letter-spacing:-.02em;
+  color:var(--text);
+}
+.bp-text p + p{margin-top:calc(40 * var(--u));}
+.bp-lead{font-size:max(15px, calc(36 * var(--u)));line-height:calc(55 * var(--u));font-weight:700;letter-spacing:-.02em;}
+.bp-heading{font-size:max(15px, calc(36 * var(--u)));line-height:calc(50 * var(--u));font-weight:700;letter-spacing:-.02em;}
+.bp-heading-lg{font-size:max(16px, calc(40 * var(--u)));line-height:calc(55 * var(--u));font-weight:700;letter-spacing:-.02em;}
+.bp-heading-xl{font-size:max(18px, calc(54 * var(--u)));line-height:calc(76 * var(--u));font-weight:700;letter-spacing:-.02em;}
+.bp-img{overflow:hidden;background:#e9e9e9;}
+.bp-img img{width:100%;height:100%;object-fit:cover;}
+
+/* 1. Hero (0–1605, white) */
+.bp-hero{padding-top:calc(176 * var(--u));padding-bottom:calc(117 * var(--u));}
+.bp-labels{display:flex;justify-content:space-between;align-items:center;}
+.bp-hero__body{position:relative;margin-top:calc(66 * var(--u));}
+.bp-hero__copy{position:absolute;left:calc(1184 * var(--u));top:calc(79 * var(--u));}
+.bp-hero__copy .bp-text{margin-top:calc(25 * var(--u));}
+.bp-hero__img{margin-top:calc(60 * var(--u));height:calc(590 * var(--u));}
+.bp-captions{
+  display:flex;
+  justify-content:space-between;
+  margin-top:calc(20 * var(--u));
+  font-size:max(12px, calc(18 * var(--u)));
+  line-height:calc(26 * var(--u));
+  color:var(--text);
+}
+.bp-captions__right{margin-right:calc(108 * var(--u));}
+
+/* 2. Philosophy (1605–2828, bubble photo) */
+.bp-philosophy{position:relative;overflow:hidden;background:#dcecf5;}
+.bp-philosophy__bg,
+.bp-banner__bg{position:absolute;inset:0;width:100%;height:100%;max-width:none;object-fit:cover;}
+/* padding-bottom counts from the left column; the right copy is absolutely positioned */
+.bp-philosophy__inner{position:relative;padding-top:calc(102 * var(--u));padding-bottom:calc(248 * var(--u));}
+.bp-philosophy .bp-title{margin-top:calc(72 * var(--u));}
+.bp-philosophy__row{position:relative;margin-top:calc(98 * var(--u));}
+.bp-chip{
+  display:inline-block;
+  background:var(--ink);
+  color:#fff;
+  font-family:var(--font-condensed);
+  font-weight:900;
+  font-size:max(11px, calc(16 * var(--u)));
+  line-height:calc(26 * var(--u));
+  padding:0 calc(18 * var(--u));
+}
+.bp-philosophy .bp-heading-xl{margin-top:calc(29 * var(--u));}
+.bp-philosophy__text{position:absolute;left:calc(920 * var(--u));top:calc(-19 * var(--u));}
+
+/* 3–5. White body (2828–7165) */
+.bp-white{padding-top:calc(139 * var(--u));padding-bottom:calc(175 * var(--u));}
+.bp-split{position:relative;}
+.bp-split--a{margin-top:calc(55 * var(--u));min-height:calc(561 * var(--u));}
+.bp-img--easy{width:calc(914 * var(--u));height:calc(561 * var(--u));}
+.bp-easy{position:absolute;left:calc(1034 * var(--u));top:calc(44.5 * var(--u));}
+.bp-easy .bp-heading{margin-top:calc(40 * var(--u));}
+.bp-easy .bp-text{margin-top:calc(34 * var(--u));}
+.bp-split--b{margin-top:calc(79 * var(--u));min-height:calc(542.5 * var(--u));}
+.bp-powerful{padding-top:calc(12.3 * var(--u));}
+.bp-powerful .bp-heading-lg{margin-top:calc(50 * var(--u));}
+.bp-img--powerful{position:absolute;top:0;left:calc(1034 * var(--u));width:calc(646 * var(--u));height:calc(532 * var(--u));}
+
+.bp-values{margin-top:calc(198.5 * var(--u));}
+.bp-values__list{list-style:none;margin:calc(56 * var(--u)) 0 0;padding:0;border-top:1px solid #1a1a1a;}
+.bp-values__list li{
+  position:relative;
+  display:flex;
+  align-items:center;
+  height:calc(289 * var(--u));
+  border-bottom:1px solid #1a1a1a;
+}
+.bp-values__num{
+  width:calc(86 * var(--u));
+  flex:none;
+  font-family:var(--font-condensed);
+  font-weight:900;
+  font-size:max(12px, calc(18 * var(--u)));
+}
+.bp-values__word{line-height:1;letter-spacing:.01em;}
+.bp-values__list .bp-text{position:absolute;left:calc(1118 * var(--u));top:50%;transform:translateY(-50%);}
+
+.bp-goal{margin-top:calc(275 * var(--u));}
+.bp-goal .bp-title{margin-top:calc(65 * var(--u));}
+.bp-goal__heading{margin-top:calc(74 * var(--u));font-size:max(15px, calc(38 * var(--u)));line-height:calc(53 * var(--u));}
+.bp-split--c{margin-top:calc(110.5 * var(--u));}
+.bp-img--goal{width:calc(920 * var(--u));height:calc(634 * var(--u));}
+.bp-goal__text{position:absolute;left:calc(1063 * var(--u));top:calc(35 * var(--u));}
+/* Absolutely placed copy keeps the Figma line breaks (<br>) instead of re-wrapping */
+.bp-hero__copy,.bp-philosophy__text,.bp-easy,.bp-values__list .bp-text,.bp-goal__text{white-space:nowrap;}
+
+/* 6. Closing banner (1033 tall, photo) */
+.bp-banner{position:relative;overflow:hidden;background:#b9a98c;color:#fff;}
+/* banner.jpg already has the dark tint baked in, so no extra overlay here */
+.bp-banner__inner{position:relative;z-index:1;padding-top:calc(99 * var(--u));padding-bottom:calc(90 * var(--u));}
+.bp-banner .bp-title{color:#fff;margin-top:calc(88 * var(--u));}
+.bp-banner__foot{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-top:calc(114 * var(--u));
+  padding-top:calc(55 * var(--u));
+  border-top:1px solid rgba(255,255,255,.7);
+  font-size:max(14px, calc(25 * var(--u)));
+  line-height:calc(36 * var(--u));
+}
+.bp-banner__logo{font-family:var(--font-inserat);font-weight:900;font-size:max(18px, calc(40 * var(--u)));line-height:1;}
+
+/* Brand page — tablet & phone: stack everything in one column */
+@media (max-width:860px){
+  .brand-page{--u:1px;}
+  .bp-wrap{padding-left:20px;padding-right:20px;}
+  .bp-label,.bp-label-sub,.bp-captions,.bp-values__num{font-size:13px;line-height:20px;}
+  .bp-label-sub{margin-right:0;}
+  .bp-title,.bp-hero__copy,.bp-philosophy__text,.bp-easy,.bp-values__list .bp-text,.bp-goal__text{white-space:normal;}
+  .bp-title--xl{font-size:21vw;}
+  .bp-title--lg{font-size:14vw;}
+  .bp-title--lg2{font-size:12vw;}
+  .bp-title--md{font-size:13vw;}
+  .bp-text{font-size:15px;line-height:1.7;}
+  .bp-text p + p{margin-top:1.2em;}
+  .bp-lead,.bp-heading,.bp-goal__heading{font-size:20px;line-height:1.45;}
+  .bp-heading-lg{font-size:22px;line-height:1.45;}
+  .bp-heading-xl{font-size:26px;line-height:1.4;}
+
+  .bp-hero{padding-top:100px;padding-bottom:56px;}
+  .bp-hero__body{margin-top:28px;}
+  .bp-hero__copy{position:static;margin-top:28px;}
+  .bp-hero__copy .bp-text{margin-top:14px;}
+  .bp-hero__img{margin-top:32px;height:auto;aspect-ratio:1680 / 590;}
+  .bp-captions{flex-direction:column;gap:4px;margin-top:12px;}
+  .bp-captions__right{margin-right:0;}
+
+  .bp-philosophy__inner{padding-top:56px;padding-bottom:64px;}
+  .bp-philosophy .bp-title{margin-top:24px;}
+  .bp-philosophy__row{margin-top:36px;}
+  .bp-chip{font-size:12px;line-height:22px;padding:0 10px;}
+  .bp-philosophy .bp-heading-xl{margin-top:14px;}
+  .bp-philosophy__text{position:static;margin-top:24px;}
+
+  .bp-white{padding-top:64px;padding-bottom:72px;}
+  .bp-split--a,.bp-split--b,.bp-split--c{min-height:0;margin-top:24px;}
+  .bp-img--easy,.bp-img--powerful,.bp-img--goal{position:static;width:100%;height:auto;}
+  .bp-img--easy{aspect-ratio:914 / 561;}
+  .bp-img--powerful{aspect-ratio:646 / 532;margin-top:24px;}
+  .bp-img--goal{aspect-ratio:920 / 634;}
+  .bp-easy{position:static;margin-top:28px;}
+  .bp-easy .bp-heading{margin-top:14px;}
+  .bp-easy .bp-text{margin-top:12px;}
+  .bp-split--b{margin-top:64px;}
+  .bp-powerful{padding-top:0;}
+  .bp-powerful .bp-heading-lg{margin-top:16px;}
+
+  .bp-values{margin-top:80px;}
+  .bp-values__list{margin-top:20px;}
+  .bp-values__list li{flex-wrap:wrap;height:auto;padding:22px 0;column-gap:12px;}
+  .bp-values__num{width:auto;}
+  .bp-values__list .bp-text{position:static;transform:none;flex-basis:100%;margin-top:8px;}
+
+  .bp-goal{margin-top:80px;}
+  .bp-goal .bp-title{margin-top:20px;}
+  .bp-goal__heading{margin-top:18px;}
+  .bp-goal__text{position:static;margin-top:24px;}
+
+  .bp-banner__inner{padding-top:48px;padding-bottom:36px;}
+  .bp-banner .bp-title{margin-top:40px;}
+  .bp-banner__foot{margin-top:48px;padding-top:20px;font-size:14px;line-height:22px;}
+  .bp-banner__logo{font-size:22px;}
+}
+
 /* Responsive */
 /* Line breaks that only apply on phones */
 .br-mobile{display:none;}
